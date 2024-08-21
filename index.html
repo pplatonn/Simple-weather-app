@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="weather, weather app">
+    <title>What's the weather like?</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="weather_container">
+            <span class="weather_container_temp">20</span>
+            <span class="weather_container_location">Vladimir</span>
+            <span class="weather_container_date">22:00 - Monday 2024-08-19</span>
+            <div class="weather_container_condition">
+                <p>Mist</p>
+            </div>
+        </div>
+        <nav class="weather_navbar">
+            <form action="">
+                <input type="text" placeholder="Enter your city">
+                <button type="submit" >Search</button>
+            </form>
+        </nav>
+    </div>
+
+    <!-- use 'defer' attribute for script tag because
+    the file should load after all HTML code -->
+
+    <script defer src="./assets/js/main.js"></script>
+</body>
+
+</html>
