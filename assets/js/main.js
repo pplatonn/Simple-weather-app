@@ -30,10 +30,20 @@ const getResults = async (location) => {
 }
 
 // function which change the HTML fields to API properties from above 
-function updateDetails (temp, locationName, time, condition) {
+function updateDetails(temp, locationName, time, condition) {
+
+    // splitting time and day into 2 variables to customize 
+
+    let splitDate = time.split(' ')[0]
+    let splitTime = time.split(' ')[1]
+
+    // using in-built js function 
+
+    let currentDay = getDayName(new Date(splitDate).getDay())
+
     weatherContainerTemp.textContent = temp;
     weatherContainerLocation.textContent = locationName;
-    weatherContainerDate.textContent = time;
+    weatherContainerDate.textContent = `${splitDate} ${currentDay} ${splitTime}`;
     weatherContainerCondition.textContent = condition
 }
 
@@ -47,3 +57,29 @@ async function searchForLocation(element) {
 searchBtn.addEventListener('click', searchForLocation)
 
 getResults(targetLocation)
+
+function getDayName(num) {
+    switch (num) {
+        case 0:
+            return 'Sunday';
+            break
+        case 1:
+            return 'Monday';
+            break
+        case 2:
+            return 'Tuesday';
+            break
+        case 3:
+            return 'Wednesday';
+            break
+        case 4:
+            return 'Thursday';
+            break
+        case 5:
+            return 'Friday';
+            break
+        case 6:
+            return 'Saturday';
+            break
+    }
+}
