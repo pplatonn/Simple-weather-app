@@ -17,7 +17,7 @@ let targetLocation = 'Vladimir';
 
 // async function that uses free weather API and gets such parametres as city, time, date and temperature 
 const getResults = async (location) => {
-    let url = `http://api.weatherapi.com/v1/current.json?key=077e43c2c9214d62948124009242108&q=${targetLocation}&aqi=no`;
+    let url = `https://api.weatherapi.com/v1/current.json?key=077e43c2c9214d62948124009242108&q=${targetLocation}&aqi=no`;
     const response = await fetch(url)
     const data = await response.json()
     let locationName = data.location.name;
